@@ -1,0 +1,346 @@
+.header-wrapper {
+  @media only screen and (min-width: 550px) {
+    height: 100%;
+  }
+
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(min-content, 10rem)) 1fr;
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    width: 26rem;
+    height: 26rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../src/assets/images/hand_left.webp');
+    @media only screen and (max-width: 45em) {
+      width: 20rem;
+      height: 20rem;
+    }
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    // bottom: 7rem;
+    bottom: 0rem;
+    right: 0rem;
+    width: 26rem;
+    height: 45rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../src/assets/images/hand_right.webp');
+    z-index: -1;
+    @media only screen and (min-width: 900px) {
+      bottom: -10rem;
+    }
+    @media only screen and (max-width: 900px) {
+      width: 20rem;
+      height: 34rem;
+      bottom: -6rem;
+    }
+    @media only screen and (max-width: 600px) {
+      width: 17rem;
+      height: 34rem;
+      bottom: -10rem;
+    }
+    @media only screen and (max-width: 380px) {
+      width: 15rem;
+      height: 30rem;
+    }
+  }
+}
+
+.header {
+  grid-column: 2/14;
+  margin-top: 22rem;
+  padding: 0 4rem;
+
+  @media only screen and (max-width: 448px) {
+    margin-top: 11rem;
+  }
+
+  @media screen and (max-width: 400px) {
+    grid-column: 1/15 !important;
+    padding: 0 2rem;
+  }
+
+  &__hero {
+    @media only screen and (max-width: 448px) {
+      padding: 0 3rem;
+    }
+    @media only screen and (max-width: 340px) {
+      padding: 0 1.7rem;
+    }
+    &--heading {
+      font-family: $font-secondary;
+      font-size: 7.5rem;
+      line-height: 100%;
+      letter-spacing: -0.02em;
+      color: var(--color-white);
+      position: relative;
+      @media only screen and (max-width: 45em) {
+        font-size: 6rem;
+        br {
+          display: none;
+        }
+      }
+      @media only screen and (max-width: 954px) {
+        font-size: 6.9rem;
+      }
+      @media only screen and (max-width: 448px) {
+        font-size: 5rem;
+        width: 100%;
+      }
+
+      &-gradient {
+        background: linear-gradient(
+          -45deg,
+          var(--color-light-blue),
+          var(--color-light-purple),
+          var(--color-light-blue),
+          var(--color-light-purple)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400% 400%;
+        animation: gradient 3s ease infinite;
+      }
+    }
+    &--cta {
+      margin-top: 10rem;
+      display: inline-block;
+      font-family: $font-tertiary;
+      font-size: 1.8rem;
+      line-height: 92.4%;
+      letter-spacing: 0.19em;
+      color: var(--color-gray);
+      text-decoration: none;
+      position: relative;
+
+      @media only screen and (max-width: 500px) {
+        margin-top: 7rem;
+      }
+
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: -1rem;
+        left: 0;
+        width: 50%;
+        height: 1px;
+        background: var(--color-gray);
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    grid-column: 1/15;
+    padding: 0 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 13rem;
+    color: var(--color-gray);
+
+    @media only screen and (max-width: 57em) {
+      padding: 0 2rem;
+    }
+
+    @media only screen and (max-width: 448px) {
+      margin-top: 19rem;
+    }
+
+    &--right {
+      @include centerContent;
+    }
+    a {
+      color: var(--color-gray);
+      text-decoration: none;
+      font-family: $font-tertiary;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: var(--color-white);
+      }
+    }
+  }
+}
+
+.about {
+  width: 80%;
+  margin: 12rem auto 7rem;
+  &__text {
+    font-size: 2.3rem;
+    line-height: 150%;
+    color: var(--color-gray);
+    display: block;
+    padding: 0 6rem;
+
+    @media only screen and (max-width: 768px) {
+      padding: 0rem;
+    }
+    @media only screen and (max-width: 600px) {
+      padding: 0rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+.projects {
+  width: 80%;
+  margin: 0 auto;
+  padding: 5rem 0;
+  p {
+    margin-bottom: 8rem;
+    margin-top: 2rem;
+
+    @media only screen and (max-width: 768px) {
+      margin: 0rem;
+    }
+  }
+}
+
+.skills {
+  background-color: #050810;
+  padding: 8rem 0;
+  transition: all 0.3s ease-in-out;
+
+  &__top {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 6rem;
+    @media only screen and (max-width: 790px) {
+      width: 100%;
+    }
+    @media only screen and (max-width: 480px) {
+      padding: 0 4rem;
+    }
+    @media only screen and (max-width: 380px) {
+      padding: 0 2rem;
+    }
+    p {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+.contact {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 6rem;
+  margin-top: 12rem;
+
+  @media only screen and (max-width: 1024px) {
+    padding: 0rem;
+  }
+  @media only screen and (max-width: 365px) {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 4.5rem;
+    line-height: 130.4%;
+    letter-spacing: -0.06em;
+    color: var(--color-gray);
+    font-weight: 100;
+    margin-top: 4rem;
+
+    @media only screen and (max-width: 1200px) {
+      font-size: 3.5rem;
+    }
+
+    @media only screen and (max-width: 500px) {
+      font-size: 3rem;
+    }
+  }
+
+  a {
+    color: var(--color-white);
+    border-bottom: 1px solid currentColor;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--color-light-blue);
+    }
+  }
+}
+
+.footer {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 6rem;
+  margin-top: 7rem;
+  margin-bottom: 5rem;
+
+  @media only screen and (max-width: 1024px) {
+    padding: 0rem;
+  }
+  @media only screen and (max-width: 365px) {
+    font-size: 3rem;
+  }
+
+  p {
+    margin-top: 2rem;
+  }
+
+  &--links {
+    @include centerContent;
+    justify-content: flex-start;
+    margin-top: 4rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 40rem;
+
+    a {
+      @include centerContent;
+      color: var(--color-gray);
+      text-decoration: none;
+      font-family: $font-tertiary;
+      line-height: 92.4%;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      font-size: 2rem;
+      font-weight: 100;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: var(--color-white);
+      }
+    }
+  }
+}
+
+.download-resume {
+  grid-column: 12 / 14;
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem 1rem 0 0;
+  border: 1px solid var(--color-light-blue);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--color-gray);
+  }
+  &:active {
+    transform: translate(-0.2px);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5);
+  }
+}

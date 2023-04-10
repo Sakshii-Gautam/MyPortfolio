@@ -1,0 +1,197 @@
+.card {
+  width: 80%;
+  margin: 6rem auto;
+  background: linear-gradient(
+    180deg,
+    rgba(35, 37, 49, 0.5) 0%,
+    rgba(15, 15, 24, 0.5) 100%
+  );
+  border: 0.2rem solid #20222e;
+  box-sizing: border-box;
+  backdrop-filter: blur(54px);
+  border-radius: 7.3rem;
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  position: relative;
+
+  @media only screen and (min-width: 1200px) {
+    width: 75%;
+  }
+  @media only screen and (min-width: 1360px) {
+    width: 68%;
+  }
+  @media only screen and (max-width: 1024px) {
+    width: 90%;
+    border-radius: 5.3rem;
+  }
+  @media only screen and (max-width: 780px) {
+    width: 95%;
+    border-radius: 3.3rem;
+    padding: 2rem;
+  }
+  @media only screen and (max-width: 680px) {
+    padding: 1.5rem;
+    width: 100%;
+  }
+  @media only screen and (max-width: 540px) {
+    flex-direction: column;
+    width: 90%;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  @media only screen and (max-width: 380px) {
+    border-radius: 2.3rem;
+    padding: 1.5rem;
+  }
+
+  &__image {
+    width: 70%;
+    height: 34rem;
+    background-size: cover;
+    position: relative;
+    border-radius: 3rem;
+    overflow: hidden;
+
+    @media only screen and (min-width: 1900px) {
+      height: 45rem;
+    }
+    @media only screen and (max-width: 1024px) {
+      height: 32rem;
+    }
+    @media only screen and (max-width: 780px) {
+      height: 30rem;
+      width: 85%;
+    }
+    @media only screen and (max-width: 600px) {
+      height: 25rem;
+    }
+    @media only screen and (max-width: 540px) {
+      width: 100%;
+    }
+    @media only screen and (max-width: 425px) {
+      height: 22rem;
+    }
+    @media only screen and (max-width: 380px) {
+      height: 20rem;
+      border-radius: 1rem;
+    }
+    @media only screen and (max-width: 330px) {
+      height: 17rem;
+    }
+
+    canvas {
+      position: absolute;
+      // border-radius: inherit !important;
+      z-index: 0;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__right {
+    margin-left: 4rem;
+    h2 {
+      margin-bottom: 4rem;
+      @media only screen and (max-width: 540px) {
+        margin-bottom: 2rem;
+      }
+    }
+    @media only screen and (max-width: 780px) {
+      margin-left: 3rem;
+    }
+    @media only screen and (max-width: 540px) {
+      margin-left: 0rem;
+      align-self: flex-start;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-family: $font-tertiary;
+    font-size: 1.8rem;
+    line-height: 92.4%;
+    letter-spacing: 0.19em;
+    text-decoration: none;
+    position: relative;
+    color: lightblue;
+
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      left: 0;
+      width: 50%;
+      height: 1px;
+      background: var(--color-gray);
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__socials {
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 5rem;
+    gap: 1.5rem;
+
+    @media only screen and (max-width: 540px) {
+      margin-top: 4rem;
+    }
+  }
+}
+
+.skill {
+  margin-top: 4rem;
+
+  &__wrapper {
+    @include centerContent;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7rem;
+    @media only screen and (max-width: 675px) {
+      gap: 4rem;
+    }
+    @media only screen and (max-width: 555px) {
+      gap: 2rem;
+    }
+
+    img {
+      width: 90px;
+      background-color: #171e2f;
+      padding: 15px;
+      height: 90px;
+      border-radius: 50%;
+
+      @media only screen and (max-width: 768px) {
+        width: 75px;
+        height: 75px;
+      }
+      @media only screen and (max-width: 600px) {
+        width: 65px;
+        height: 65px;
+      }
+      @media only screen and (max-width: 400px) {
+        width: 60px;
+        height: 60px;
+      }
+      @media only screen and (max-width: 300px) {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,945 @@
+:root {
+  --color-white: #ffffff;
+  --color-gray: #c4c4c4;
+  --color-black: #000000;
+  --color-purple: #8000ff;
+  --color-light-purple: rgb(207, 89, 230);
+  --color-light-blue: #6bc5f8;
+}
+
+@font-face {
+  font-family: "Circular Std Book";
+  src: url("../src/assets/fonts/CircularStd-Book.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "D-DIN Condensed";
+  src: url("../src/assets/fonts/D-DINCondensed-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mark Pro";
+  src: url("../src/assets/fonts/MarkPro-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  background: #10101a;
+  font-family: "Circular Std Book", sans-serif;
+  color: #fff;
+}
+
+/*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+[data-scroll-direction=horizontal] [data-scroll-container] {
+  height: 100vh;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-scroll-direction=horizontal] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  transform: scaleY(1);
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar:hover {
+  transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar_thumb {
+  right: auto;
+  bottom: 0;
+}
+
+.heading-1 {
+  display: flex;
+  align-items: center;
+  font-size: 4rem;
+  letter-spacing: -0.02em;
+  font-family: "Mark Pro", sans-serif;
+}
+@media only screen and (max-width: 56.25em) {
+  .heading-1 {
+    font-size: 3.25rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .heading-1 {
+    font-size: 2.5rem;
+  }
+}
+.heading-1 span {
+  margin-right: 0.5rem;
+  background-image: linear-gradient(to right, #b0f3f1, #ffcfdf);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.heading-1__sub span {
+  background-image: linear-gradient(to right, var(--color-white), var(--color-white));
+}
+.heading-2 {
+  font-size: 3.2rem;
+  line-height: 105%;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  font-family: "Mark Pro", sans-serif;
+}
+@media only screen and (max-width: 57em) {
+  .heading-2 {
+    line-height: 122%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .heading-2 {
+    font-size: 2.5rem;
+  }
+}
+
+.paragraph {
+  font-size: 2rem;
+  line-height: 125%;
+  color: var(--color-gray);
+}
+.paragraph__sub {
+  color: #8b8b8b;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes logoLeftAnim {
+  0% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translate(-110%, 0);
+  }
+  50%, 100% {
+    transform: translate(0%, 0);
+  }
+}
+@keyframes reviewCardAnim1 {
+  from {
+    transform: translateX(-52%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes reviewCardAnim2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-52%);
+  }
+}
+@keyframes rect1Anim {
+  0% {
+    height: 5.8px;
+  }
+  50% {
+    height: 8px;
+  }
+  100% {
+    height: 1px;
+  }
+}
+@keyframes rect2Anim {
+  0% {
+    height: 5.8px;
+  }
+  50% {
+    height: 6px;
+  }
+  100% {
+    height: 4px;
+  }
+}
+@keyframes rect3Anim {
+  0% {
+    height: 5.8px;
+  }
+  50% {
+    height: 4px;
+  }
+  100% {
+    height: 8px;
+  }
+}
+@keyframes rect4Anim {
+  0% {
+    height: 5.8px;
+  }
+  50% {
+    height: 1px;
+  }
+  100% {
+    height: 3px;
+  }
+}
+@keyframes cursorAnim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rot {
+  animation: cursorAnim 1s infinite linear;
+}
+
+@keyframes preloaderTextAnim {
+  0% {
+    transform: translateY(0%);
+  }
+  50%, 100% {
+    transform: translateY(-600%);
+  }
+}
+.alexxandria-anim {
+  background: linear-gradient(-45deg, #63898a, #9fbcbf, var(--color-white), var(--color-white));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  line-height: 103%;
+  animation: gradient 3s ease-in-out;
+}
+@media only screen and (max-width: 57em) {
+  .alexxandria-anim {
+    line-height: 122%;
+  }
+}
+
+.safarika-anim {
+  background: linear-gradient(-45deg, #fbb034, #ffdd00, var(--color-white), var(--color-white));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  line-height: 105%;
+  animation: gradient 3s ease-in-out;
+}
+
+.heatrow-anim {
+  background: linear-gradient(-45deg, #045de9, #09c6f9, var(--color-white), var(--color-white));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  animation: gradient 3s ease-in-out;
+}
+
+.adeola-anim {
+  background: linear-gradient(-45deg, var(--color-light-blue), var(--color-light-purple), var(--color-white), var(--color-white));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  line-height: 105%;
+  animation: gradient 3s ease-in-out;
+}
+
+.header-wrapper {
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(min-content, 10rem)) 1fr;
+  position: relative;
+}
+@media only screen and (min-width: 550px) {
+  .header-wrapper {
+    height: 100%;
+  }
+}
+.header-wrapper::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  width: 26rem;
+  height: 26rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../src/assets/images/hand_left.webp");
+}
+@media only screen and (max-width: 45em) {
+  .header-wrapper::before {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+.header-wrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0rem;
+  right: 0rem;
+  width: 26rem;
+  height: 45rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../src/assets/images/hand_right.webp");
+  z-index: -1;
+}
+@media only screen and (min-width: 900px) {
+  .header-wrapper::after {
+    bottom: -10rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .header-wrapper::after {
+    width: 20rem;
+    height: 34rem;
+    bottom: -6rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header-wrapper::after {
+    width: 17rem;
+    height: 34rem;
+    bottom: -10rem;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .header-wrapper::after {
+    width: 15rem;
+    height: 30rem;
+  }
+}
+
+.header {
+  grid-column: 2/14;
+  margin-top: 22rem;
+  padding: 0 4rem;
+}
+@media only screen and (max-width: 448px) {
+  .header {
+    margin-top: 11rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .header {
+    grid-column: 1/15 !important;
+    padding: 0 2rem;
+  }
+}
+@media only screen and (max-width: 448px) {
+  .header__hero {
+    padding: 0 3rem;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .header__hero {
+    padding: 0 1.7rem;
+  }
+}
+.header__hero--heading {
+  font-family: "Mark Pro", sans-serif;
+  font-size: 7.5rem;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  position: relative;
+}
+@media only screen and (max-width: 45em) {
+  .header__hero--heading {
+    font-size: 6rem;
+  }
+  .header__hero--heading br {
+    display: none;
+  }
+}
+@media only screen and (max-width: 954px) {
+  .header__hero--heading {
+    font-size: 6.9rem;
+  }
+}
+@media only screen and (max-width: 448px) {
+  .header__hero--heading {
+    font-size: 5rem;
+    width: 100%;
+  }
+}
+.header__hero--heading-gradient {
+  background: linear-gradient(-45deg, var(--color-light-blue), var(--color-light-purple), var(--color-light-blue), var(--color-light-purple));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+}
+.header__hero--cta {
+  margin-top: 10rem;
+  display: inline-block;
+  font-family: "D-DIN Condensed", sans-serif;
+  font-size: 1.8rem;
+  line-height: 92.4%;
+  letter-spacing: 0.19em;
+  color: var(--color-gray);
+  text-decoration: none;
+  position: relative;
+}
+@media only screen and (max-width: 500px) {
+  .header__hero--cta {
+    margin-top: 7rem;
+  }
+}
+.header__hero--cta::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 50%;
+  height: 1px;
+  background: var(--color-gray);
+  transition: all 0.3s ease;
+}
+.header__hero--cta:hover::after {
+  width: 100%;
+}
+.header__footer {
+  grid-column: 1/15;
+  padding: 0 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 13rem;
+  color: var(--color-gray);
+}
+@media only screen and (max-width: 57em) {
+  .header__footer {
+    padding: 0 2rem;
+  }
+}
+@media only screen and (max-width: 448px) {
+  .header__footer {
+    margin-top: 19rem;
+  }
+}
+.header__footer--right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__footer a {
+  color: var(--color-gray);
+  text-decoration: none;
+  font-family: "D-DIN Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  transition: all 0.3s ease-in-out;
+}
+.header__footer a:hover {
+  color: var(--color-white);
+}
+
+.about {
+  width: 80%;
+  margin: 12rem auto 7rem;
+}
+.about__text {
+  font-size: 2.3rem;
+  line-height: 150%;
+  color: var(--color-gray);
+  display: block;
+  padding: 0 6rem;
+}
+@media only screen and (max-width: 768px) {
+  .about__text {
+    padding: 0rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .about__text {
+    padding: 0rem;
+    font-size: 2rem;
+  }
+}
+
+.projects {
+  width: 80%;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+.projects p {
+  margin-bottom: 8rem;
+  margin-top: 2rem;
+}
+@media only screen and (max-width: 768px) {
+  .projects p {
+    margin: 0rem;
+  }
+}
+
+.skills {
+  background-color: #050810;
+  padding: 8rem 0;
+  transition: all 0.3s ease-in-out;
+}
+.skills__top {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 6rem;
+}
+@media only screen and (max-width: 790px) {
+  .skills__top {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .skills__top {
+    padding: 0 4rem;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .skills__top {
+    padding: 0 2rem;
+  }
+}
+.skills__top p {
+  margin-top: 1.5rem;
+}
+
+.contact {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 6rem;
+  margin-top: 12rem;
+}
+@media only screen and (max-width: 1024px) {
+  .contact {
+    padding: 0rem;
+  }
+}
+@media only screen and (max-width: 365px) {
+  .contact {
+    font-size: 3rem;
+  }
+}
+.contact h2 {
+  font-size: 4.5rem;
+  line-height: 130.4%;
+  letter-spacing: -0.06em;
+  color: var(--color-gray);
+  font-weight: 100;
+  margin-top: 4rem;
+}
+@media only screen and (max-width: 1200px) {
+  .contact h2 {
+    font-size: 3.5rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .contact h2 {
+    font-size: 3rem;
+  }
+}
+.contact a {
+  color: var(--color-white);
+  border-bottom: 1px solid currentColor;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.contact a:hover {
+  color: var(--color-light-blue);
+}
+
+.footer {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 6rem;
+  margin-top: 7rem;
+  margin-bottom: 5rem;
+}
+@media only screen and (max-width: 1024px) {
+  .footer {
+    padding: 0rem;
+  }
+}
+@media only screen and (max-width: 365px) {
+  .footer {
+    font-size: 3rem;
+  }
+}
+.footer p {
+  margin-top: 2rem;
+}
+.footer--links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 4rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 40rem;
+}
+.footer--links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-gray);
+  text-decoration: none;
+  font-family: "D-DIN Condensed", sans-serif;
+  line-height: 92.4%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 100;
+  transition: all 0.3s ease-in-out;
+}
+.footer--links a:hover {
+  color: var(--color-white);
+}
+
+.download-resume {
+  grid-column: 12/14;
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem 1rem 0 0;
+  border: 1px solid var(--color-light-blue);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.download-resume:hover {
+  color: var(--color-gray);
+}
+.download-resume:active {
+  transform: translate(-0.2px);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5);
+}
+
+.card {
+  width: 80%;
+  margin: 6rem auto;
+  background: linear-gradient(180deg, rgba(35, 37, 49, 0.5) 0%, rgba(15, 15, 24, 0.5) 100%);
+  border: 0.2rem solid #20222e;
+  box-sizing: border-box;
+  backdrop-filter: blur(54px);
+  border-radius: 7.3rem;
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  position: relative;
+}
+@media only screen and (min-width: 1200px) {
+  .card {
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 1360px) {
+  .card {
+    width: 68%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .card {
+    width: 90%;
+    border-radius: 5.3rem;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .card {
+    width: 95%;
+    border-radius: 3.3rem;
+    padding: 2rem;
+  }
+}
+@media only screen and (max-width: 680px) {
+  .card {
+    padding: 1.5rem;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .card {
+    flex-direction: column;
+    width: 90%;
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .card {
+    border-radius: 2.3rem;
+    padding: 1.5rem;
+  }
+}
+.card__image {
+  width: 70%;
+  height: 34rem;
+  background-size: cover;
+  position: relative;
+  border-radius: 3rem;
+  overflow: hidden;
+}
+@media only screen and (min-width: 1900px) {
+  .card__image {
+    height: 45rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .card__image {
+    height: 32rem;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .card__image {
+    height: 30rem;
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .card__image {
+    height: 25rem;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .card__image {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .card__image {
+    height: 22rem;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .card__image {
+    height: 20rem;
+    border-radius: 1rem;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .card__image {
+    height: 17rem;
+  }
+}
+.card__image canvas {
+  position: absolute;
+  z-index: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+.card__image img {
+  width: 100%;
+  height: 100%;
+}
+.card__right {
+  margin-left: 4rem;
+}
+.card__right h2 {
+  margin-bottom: 4rem;
+}
+@media only screen and (max-width: 540px) {
+  .card__right h2 {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .card__right {
+    margin-left: 3rem;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .card__right {
+    margin-left: 0rem;
+    align-self: flex-start;
+  }
+}
+.card__link {
+  display: inline-block;
+  font-family: "D-DIN Condensed", sans-serif;
+  font-size: 1.8rem;
+  line-height: 92.4%;
+  letter-spacing: 0.19em;
+  text-decoration: none;
+  position: relative;
+  color: lightblue;
+}
+.card__link::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 50%;
+  height: 1px;
+  background: var(--color-gray);
+  transition: all 0.3s ease;
+}
+.card__link:hover::after {
+  width: 100%;
+}
+.card__socials {
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 5rem;
+  gap: 1.5rem;
+}
+@media only screen and (max-width: 540px) {
+  .card__socials {
+    margin-top: 4rem;
+  }
+}
+
+.skill {
+  margin-top: 4rem;
+}
+.skill__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7rem;
+}
+@media only screen and (max-width: 675px) {
+  .skill__wrapper {
+    gap: 4rem;
+  }
+}
+@media only screen and (max-width: 555px) {
+  .skill__wrapper {
+    gap: 2rem;
+  }
+}
+.skill__wrapper img {
+  width: 90px;
+  background-color: #171e2f;
+  padding: 15px;
+  height: 90px;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 768px) {
+  .skill__wrapper img {
+    width: 75px;
+    height: 75px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .skill__wrapper img {
+    width: 65px;
+    height: 65px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .skill__wrapper img {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .skill__wrapper img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
