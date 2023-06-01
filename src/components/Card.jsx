@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { svgs } from '../assets/constants';
+import { motion } from 'framer-motion';
 
-const Card = ({ image, name, link, git }) => {
+const Card = ({ image, name, link, git, number }) => {
   return (
     <>
-      <div className='card'>
+      <motion.div
+        initial={{ x: number % 2 === 0 ? -100 : 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className='card'
+      >
         <div className='card__image'>
           <img src={image} alt='project card image' />
         </div>
@@ -26,7 +32,7 @@ const Card = ({ image, name, link, git }) => {
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

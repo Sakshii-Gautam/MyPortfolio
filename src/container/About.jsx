@@ -5,7 +5,7 @@ const About = () => {
     <>
       <div className='about'>
         <p className='about__text'>
-          Hello stranger! 👋, My name is sakshi and I am a frontend web
+          Hello stranger! 👋, My name is Sakshi and I am a frontend web
           developer, who loves the challenge of turning complex designs into
           reality. With a commitment to clean code and attention to detail, I'm
           always up for a challenge and eager to learn new skills and

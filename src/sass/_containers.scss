@@ -26,7 +26,6 @@
     content: '';
     display: block;
     position: absolute;
-    // bottom: 7rem;
     bottom: 0rem;
     right: 0rem;
     width: 26rem;
@@ -85,9 +84,6 @@
       position: relative;
       @media only screen and (max-width: 45em) {
         font-size: 6rem;
-        br {
-          display: none;
-        }
       }
       @media only screen and (max-width: 954px) {
         font-size: 6.9rem;
@@ -97,7 +93,36 @@
         width: 100%;
       }
 
+      &-sm {
+        @media screen and (min-width: 801px) {
+          display: none;
+        }
+      }
+      &-lg {
+        @media screen and (max-width: 800px) {
+          display: none;
+        }
+
+        span {
+          &:hover {
+            @media screen and (min-width: 800px) {
+              animation: rubberband 750ms alternate ease-out forwards;
+              background: linear-gradient(
+                to bottom,
+                var(--color-light-blue),
+                var(--color-light-purple)
+              );
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              display: inline-block;
+            }
+          }
+        }
+      }
+
       &-gradient {
+        display: inline-block;
         background: linear-gradient(
           -45deg,
           var(--color-light-blue),
